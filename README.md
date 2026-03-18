@@ -14,7 +14,7 @@ nom_fichier = un nom se terminant par ".xlsx", par exemple "uss_affiliations.xls
 email_contact = saisir une adresse mail, pour identifier le demandeur auprès des api.
 
 ## Ce que fait le script
-- d'après l'url spécifiée de DBL (base bibliographique en sciences du numérique), il récupère, pour les volumes de chaque année spécifiée, le doi, le titre et les auteurs de chaque pubiblication.
+- d'après l'url spécifiée de DBLP (base bibliographique en sciences du numérique), il récupère, pour les volumes de chaque année spécifiée, le doi, le titre et les auteurs de chaque pubiblication.
 - exclus : les contribtions aux workshops.
 
 ## Résultat
