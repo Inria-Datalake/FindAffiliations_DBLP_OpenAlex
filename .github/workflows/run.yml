@@ -49,7 +49,7 @@ jobs:
           ANNEE_MAX: ${{ github.event.inputs.annee_max }}
           CIBLE_DBLP: ${{ github.event.inputs.cible_dblp }}
           NOM_FICHIER: ${{ github.event.inputs.nom_fichier }}
-        run: python ton_script.py
+        run: python FindAffiliations_DBLP_OpenAlex.ipynb
 
       - name: Upload Excel result
         if: always()
