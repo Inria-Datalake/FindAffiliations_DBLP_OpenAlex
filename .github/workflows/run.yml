@@ -1,5 +1,4 @@
 name: Test OpenAlex (dev branch)
-
 on:
   workflow_dispatch:
     inputs:
@@ -19,14 +18,12 @@ on:
         description: "Nom du fichier de sortie"
         required: true
         default: "uss_affiliations.xlsx"
-
   push:
     branches: [ github-actions-test ]
 
 jobs:
   run:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -40,7 +37,12 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install requests pandas openpyxl python-dotenv
+          pip install requests pandas openpyxl python-dotenv jupyter nbconvert
+
+      - name: Convert notebook to script
+        run: |
+          jupyter nbconvert --to script FindAffiliations_DBLP_OpenAlex.ipynb
+          mv FindAffiliations_DBLP_OpenAlex.py FindAffiliations_DBLP_OpenAlex_script.py
 
       - name: Run script
         env:
@@ -49,7 +51,7 @@ jobs:
           ANNEE_MAX: ${{ github.event.inputs.annee_max }}
           CIBLE_DBLP: ${{ github.event.inputs.cible_dblp }}
           NOM_FICHIER: ${{ github.event.inputs.nom_fichier }}
-        run: python FindAffiliations_DBLP_OpenAlex.ipynb
+        run: python FindAffiliations_DBLP_OpenAlex_script.py
 
       - name: Upload Excel result
         if: always()
