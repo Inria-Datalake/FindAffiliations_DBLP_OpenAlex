@@ -1,5 +1,6 @@
 # FindAffiliations_DBLP_OpenAlex
-A script to find affiliations from a list of conference papers found in DBLP
+Un script pour trouver, dans OpenAlex, les affiliations à partir d'une liste de communications de congrès trouvée dans DBLP
+A script to find, in OpenAlex, affiliations from a list of conference papers found in DBLP
 
 ## Installation
 Copier le script dans un environnement Jupyter Notebook
@@ -11,7 +12,7 @@ annee_min = année début (par ex: 2021)
 annee_max = année fin (par ex: 2025)
 cible_dblp = url du congrès sur dblp, avec ".xml" au lieu de ".html" à la fin (ex: "https://dblp.org/db/conf/uss/index.xml")
 nom_fichier = un nom se terminant par ".xlsx", par exemple "uss_affiliations.xlsx"
-email_contact = saisir une adresse mail, pour identifier le demandeur auprès des api.
+cle_api_OpenAlex = saisir de préférence la variable d'environnement qui contient votre clé API OpenAlex plutôt que votre clé en dur (pour obtenir la clé : https://openalex.org/settings/api-key.
 
 ## Ce que fait le script
 - d'après l'url spécifiée de DBLP (base bibliographique en sciences du numérique), il récupère, pour les volumes de chaque année spécifiée, le doi, le titre et les auteurs de chaque pubiblication.
