@@ -13,11 +13,11 @@ on:
       cible_dblp:
         description: "URL DBLP"
         required: true
-        default: "https://dblp.org/db/conf/uss/index.xml"
+        default: "https://dblp.org/db/conf/tqc/index.xml"
       nom_fichier:
         description: "Nom du fichier de sortie"
         required: true
-        default: "uss_affiliations.xlsx"
+        default: "tqc_affiliations.xlsx"
   push:
     branches: [ github-actions-test ]
 
